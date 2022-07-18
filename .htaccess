@@ -1,0 +1,21 @@
+#--------------------------------------------------
+# Suivre les liens symboliques :
+#--------------------------------------------------
+
+Options +FollowSymlinks
+
+# SECTION BEGIN GIT PROTECTION
+RedirectMatch 404 /\.git
+# SECTION END GIT PROTECTION
+
+#--------------------------------------------------
+# Activation reecriture url :
+#--------------------------------------------------
+
+RewriteEngine on
+
+#--------------------------------------------------
+# Régles de réécriture d'URL :
+#--------------------------------------------------
+
+RewriteRule ^(.*)/$ index.php?url=$1 [QSA,L]
